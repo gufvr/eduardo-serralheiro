@@ -5,7 +5,6 @@ function abrirImagem(src) {
   modalImg.src = src;
   modal.classList.remove("hidden");
 
-  // animação de zoom suave
   setTimeout(() => modalImg.classList.add("scale-100"), 10);
 }
 
