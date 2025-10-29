@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_home_work"
     />
 
-    <title>Eduardo Serralheiro</title>
+    <title>Eduardo Serralheria & Soluções Metálicas</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -100,9 +100,9 @@
             <h2
               class="text-3xl md:text-4xl font-extrabold text-primary dark:text-white mb-4"
             >
-              Qualidade e confiança em cada solda
+              Qualidade e confiança em cada solda.
             </h2>
-            <p class="text-gray-300 text-md mb-6">"inserir depois"</p>
+            <p class="text-gray-300 text-md mb-6">Experiência e qualidade em serralheria há mais de duas décadas. Peça seu orçamento e surpreenda-se!</p>
 
             <ul class="mt-6 text-md text-gray-300 space-y-2">
               <li>
@@ -122,14 +122,88 @@
           <div
             class="rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110"
           >
-            <img
+            <figure class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/guarda-corpo.jpg')">
+              <img
               src="./src/img/guarda-corpo.jpg"
               alt="Guarda corpo de Sacada"
               class="w-full h-72 md:h-96 object-cover"
             />
+            </figure>
+            
           </div>
         </div>
       </section>
+
+      <section id="trabalhos" class="bg-gray-50 dark:bg-gray-900/50">
+        <div class="max-w-5xl mx-auto px-4 py-12">
+          <h3
+            class="text-2xl font-semibold text-primary dark:text-white mb-6 text-center"
+          >
+            Trabalhos Recentes
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/cobertura-area-gourmet.jpg')"
+            >
+              <img
+                src="./src/img/cobertura-area-gourmet.jpg"
+                alt="Cobertura de área gourmet"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Cobertura de área gourmet
+              </figcaption>
+            </figure>
+
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/estrutura-para-telhado.jpg')"
+            >
+              <img
+                src="./src/img/estrutura-para-telhado.jpg"
+                alt="Grade sob medida"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Estrutura para telhado
+              </figcaption>
+            </figure>
+
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/pergolado.jpg')"
+            >
+              <img
+                src="./src/img/pergolado.jpg"
+                alt="Cobertura metálica"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Cobertura para Pergolado
+              </figcaption>
+            </figure>
+
+            <div
+  id="imageModal"
+  class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50 backdrop-blur-sm"
+  onclick="fecharImagem()"
+>
+  <img
+    id="modalImage"
+    src=""
+    alt="Imagem ampliada"
+    class="rounded-lg shadow-2xl transform scale-0 transition-transform duration-300
+           max-w-[90vw] max-h-[90vh]"
+    style="width: 2500px; height: 1900px; object-fit: contain;"
+  />
+  </div>
+        </div>
+      </section>
     </main>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
