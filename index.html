@@ -202,6 +202,114 @@
   </div>
         </div>
       </section>
+
+      <section id="orcamento" class="bg-gray-50 dark:bg-gray-900/50">
+        <div class="max-w-3xl mx-auto px-4 py-12">
+          <h3
+            class="text-2xl font-semibold text-primary dark:text-white mb-4 text-center"
+          >
+            Peça um orçamento pelo WhatsApp
+          </h3>
+
+          <form
+            id="orcamentoForm"
+            class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="flex flex-col text-sm relative">
+                <span
+                  class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-user text-gray-400"></i> Nome
+                </span>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Seu nome completo"
+                  class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                  required
+                />
+              </label>
+
+              <label class="flex flex-col text-sm relative">
+                <span
+                  class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-phone text-gray-400"></i> Telefone
+                </span>
+                <input
+                  type="tel"
+                  id="telefone"
+                  placeholder="(99) 99999-9999"
+                  class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                  required
+                  oninput="const warning = this.nextElementSibling; if(/\D/.test(this.value)){ warning.classList.remove('hidden'); this.value = this.value.replace(/\D/g,''); } else { warning.classList.add('hidden'); }"
+                />
+                <span
+                  id="telefoneWarning"
+                  class="text-red-500 text-xs mt-1 hidden"
+                >
+                  O campo Telefone aceita apenas números!
+                </span>
+              </label>
+            </div>
+
+            <label class="flex flex-col text-sm mt-4 relative">
+              <span
+                class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1"
+              >
+                <i class="fa-solid fa-briefcase text-gray-400"></i> Serviço
+              </span>
+              <select
+                id="servico"
+                class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+              >
+                <option value="">Selecione</option>
+                <option>Portão</option>
+                <option>Grade</option>
+                <option>Cobertura</option>
+                <option>Estrutura metálica</option>
+                <option>Outros</option>
+              </select>
+            </label>
+
+            <label class="flex flex-col text-sm mt-4 relative">
+              <span
+                class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1"
+              >
+                <i class="fa-solid fa-comment text-gray-400"></i> Mensagem
+              </span>
+              <textarea
+                id="mensagem"
+                rows="4"
+                placeholder="Descreva o serviço / medidas aproximadas"
+                class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+              ></textarea>
+            </label>
+
+            <div class="mt-4 flex items-center gap-3">
+              <button
+                type="submit"
+                class="bg-accent text-white px-5 py-3 rounded-md font-medium shadow hover:bg-green-300 hover:text-gray-600 transition"
+              >
+                Enviar pelo WhatsApp
+              </button>
+              <button
+                type="button"
+                id="limparBtn"
+                class="text-sm text-gray-500 underline"
+              >
+                Limpar
+              </button>
+            </div>
+
+            <p class="text-xs text-gray-400 mt-3 dark:text-gray-400">
+              Ao enviar, o WhatsApp será aberto com sua mensagem. Não
+              armazenamos dados.
+            </p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <script src="./js/main.js"></script>
