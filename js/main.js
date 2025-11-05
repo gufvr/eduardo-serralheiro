@@ -1,3 +1,27 @@
+let lastScroll = 0;
+const header = document.getElementById("mainHeader");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    header.style.transform = "translateY(-100%)";
+    header.style.opacity = "0";
+    header.style.boxShadow = "none";
+  } else {
+    header.style.transform = "translateY(0)";
+    header.style.opacity = "1";
+
+    if (currentScroll > 20) {
+      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+    } else {
+      header.style.boxShadow = "none";
+    }
+  }
+
+  lastScroll = currentScroll;
+});
+
 function abrirImagem(src) {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
