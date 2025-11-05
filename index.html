@@ -42,16 +42,6 @@
         },
       };
     </script>
-    <style>
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: url("./src/img/fundo.jpeg") center/cover no-repeat;
-        filter: blur(8px) brightness(0.9);
-        z-index: -1;
-      }
-    </style>
   </head>
 
   <body
@@ -74,26 +64,26 @@
           </div>
           <div>
             <h1 class="text-lg font-semibold text-primary dark:text-white">
-              Eduardo <b class="text-org">Serralheiro</b>
+              <b class="text-org">Eduardo Rogrigues</b> | Serralheria & Soluções Metálicas
             </h1>
             <p class="text-xs text-gray-500 dark:text-gray-400">
-              Portões · Pergolados · Estruturas Metálicas
+              Fabricação sob medida e orçamento sem compromisso
             </p>
           </div>
-
-          <nav class="hidden md:flex items-center gap-4">
-            <a
-              href="#trabalhos"
-              class="text-lg font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-[#f97316]"
-              >Trabalhos</a
-            >
-            <a
-              href="#orcamento"
-              class="text-lg font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-[#f97316]"
-              >Solicite um orçamento</a
-            >
-          </nav>
         </div>
+
+        <nav class="hidden md:flex items-center gap-4">
+          <a
+            href="#trabalhos"
+            class="text-lg font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-[#f97316]"
+            >Trabalhos</a
+          >
+          <a
+            href="#orcamento"
+            class="text-lg font-medium text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-[#f97316]"
+            >Solicite um orçamento</a
+          >
+        </nav>
       </div>
     </header>
 
@@ -112,31 +102,25 @@
 
             <ul class="mt-6 text-md text-gray-300 space-y-2">
               <li>
-                <span class="text-accent">✓</span> Serviços residenciais e
-                industriais
+                <span class="text-accent">✓</span> Estruturas residenciais e industriais
               </li>
               <li>
-                <span class="text-accent">✓</span> Grades, Sacadas, Escadas,
-                Coberturas e estruturas metálicas
+                <span class="text-accent">✓</span> Portões, grades, sacadas, escadas e coberturas
               </li>
               <li>
-                <span class="text-accent">✓</span> Orçamento sem compromisso
+                <span class="text-accent">✓</span> Fabricação sob medida e orçamento sem compromisso
               </li>
             </ul>
           </div>
 
           <div
-            class="rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110"
+            class="relative overflow-hidden rounded-xl "
           >
-            <figure class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
-              onclick="abrirImagem('./src/img/guarda-corpo.jpg')">
-              <img
-              src="./src/img/guarda-corpo.jpg"
-              alt="Guarda corpo de Sacada"
-              class="w-full h-72 md:h-96 object-cover"
+            <img
+              src="./src/img/hero.png"
+              alt="Hero"
+              class="w-full h-96 object-cover rounded-xl opacity-95"
             />
-            </figure>
-            
           </div>
         </div>
       </section>
@@ -166,15 +150,15 @@
 
             <figure
               class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
-              onclick="abrirImagem('./src/img/estrutura-para-telhado.jpg')"
+              onclick="abrirImagem('./src/img/guarda-corpo.jpg')"
             >
               <img
-                src="./src/img/estrutura-para-telhado.jpg"
-                alt="Grade sob medida"
+                src="./src/img/guarda-corpo.jpg"
+                alt="Guarda-corpo de escada"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
               <figcaption class="font-semibold p-4 text-sm text-gray-200">
-                Estrutura para telhado
+                Guarda-corpo de escada
               </figcaption>
             </figure>
 
@@ -189,6 +173,48 @@
               />
               <figcaption class="font-semibold p-4 text-sm text-gray-200">
                 Cobertura para Pergolado
+              </figcaption>
+            </figure>
+
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/pergolado.jpg')"
+            >
+              <img
+                src="./src/img/pergolado.jpg"
+                alt="Cobertura metálica"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Cobertura para Pergolado
+              </figcaption>
+            </figure>
+
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/escada-guarda-corpo.jpg')"
+            >
+              <img
+                src="./src/img/escada-guarda-corpo.jpg"
+                alt="Escada e guarda-corpo"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Escada e guarda-corpo
+              </figcaption>
+            </figure>
+
+            <figure
+              class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transform transition-all duration-500 hover:scale-110 cursor-pointer"
+              onclick="abrirImagem('./src/img/estrutura-metálica-de-base.jpg')"
+            >
+              <img
+                src="./src/img/estrutura-metálica-de-base.jpg"
+                alt="Cobertura metálica"
+                class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
+              />
+              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+                Estrutura metálica de base
               </figcaption>
             </figure>
 
