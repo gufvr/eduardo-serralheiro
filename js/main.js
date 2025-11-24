@@ -125,3 +125,31 @@ function abrirImagem(src) {
 
   setTimeout(() => modalImg.classList.add("scale-100"), 10);
 }
+
+const html = document.documentElement;
+const themeToggle = document.getElementById("themeToggle");
+
+function applyTheme(theme) {
+  if (theme === "dark") {
+    html.classList.add("dark");
+  } else {
+    html.classList.remove("dark");
+  }
+}
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(prefersDark ? "dark" : "light");
+}
+
+themeToggle?.addEventListener("click", () => {
+  const isDark = html.classList.contains("dark");
+  const newTheme = isDark ? "light" : "dark";
+  applyTheme(newTheme);
+
+  localStorage.setItem("theme", newTheme);
+});

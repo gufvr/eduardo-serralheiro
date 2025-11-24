@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" class="scroll-smooth transition-colors duration-300">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
@@ -28,6 +28,7 @@
 
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
@@ -42,6 +43,9 @@
         },
       };
     </script>
+
+
+
   </head>
 
   <body
@@ -87,6 +91,24 @@
           Solicite um orçamento
         </a>
       </nav>
+      <button
+          id="themeToggle"
+          class="ml-4 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          aria-label="Alternar tema"
+        >
+          <svg id="iconSun" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+
+          <svg id="iconMoon" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path
+              d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.93 9.79z">
+            </path>
+          </svg>
+        </button>
     </div>
   </header>
 
@@ -102,9 +124,9 @@
             >
               Qualidade e confiança em cada solda.
             </h2>
-            <p class="text-gray-300 text-md mb-6">Experiência e qualidade em serralheria há mais de duas décadas. Peça seu orçamento e surpreenda-se!</p>
+            <p class="text-gray-600 dark:text-gray-300 text-md mb-6"> Experiência e qualidade em serralheria há mais de duas décadas. Peça seu orçamento e surpreenda-se!</p>
 
-            <ul class="mt-6 text-md text-gray-300 space-y-2">
+            <ul class="mt-6 text-md text-gray-600 dark:text-gray-300 space-y-2">
               <li>
                 <span class="text-accent">✓</span> Estruturas residenciais e industriais
               </li>
@@ -123,7 +145,7 @@
             <img
               src="./src/img/hero.png"
               alt="Hero"
-              class="w-full h-96 object-cover rounded-xl opacity-95"
+              class="w-full h-96 object-cover rounded-xl"
             />
           </div>
         </div>
@@ -147,7 +169,8 @@
                 alt="Cobertura de área gourmet"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Cobertura de área gourmet
               </figcaption>
             </figure>
@@ -161,7 +184,8 @@
                 alt="Guarda-corpo de escada"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Guarda-corpo de escada
               </figcaption>
             </figure>
@@ -175,7 +199,8 @@
                 alt="Cobertura metálica"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Cobertura para Pergolado
               </figcaption>
             </figure>
@@ -189,7 +214,8 @@
                 alt="Cobertura metálica"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Estrutura metálica para telhado
               </figcaption>
             </figure>
@@ -203,7 +229,8 @@
                 alt="Escada e guarda-corpo"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Escada e guarda-corpo
               </figcaption>
             </figure>
@@ -217,7 +244,8 @@
                 alt="Cobertura metálica"
                 class="w-full h-48 object-cover transition-all duration-300 hover:brightness-110 hover:opacity-95"
               />
-              <figcaption class="font-semibold p-4 text-sm text-gray-200">
+              <figcaption class="font-semibold p-4 text-sm text-gray-700 dark:text-gray-200">
+
                 Estrutura metálica de base
               </figcaption>
             </figure>
@@ -262,7 +290,8 @@
                   type="text"
                   id="nome"
                   placeholder="Seu nome completo"
-                  class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                  class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 ...
+ pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
                   required
                 />
               </label>
@@ -277,7 +306,8 @@
                   type="tel"
                   id="telefone"
                   placeholder="(99) 99999-9999"
-                  class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                  class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 ...
+ pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
                   required
                   oninput="const warning = this.nextElementSibling; if(/\D/.test(this.value)){ warning.classList.remove('hidden'); this.value = this.value.replace(/\D/g,''); } else { warning.classList.add('hidden'); }"
                 />
@@ -298,7 +328,8 @@
               </span>
               <select
                 id="servico"
-                class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 ...
+ pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
               >
                 <option value="">Selecione</option>
                 <option>Portão</option>
@@ -319,7 +350,8 @@
                 id="mensagem"
                 rows="4"
                 placeholder="Descreva o serviço / medidas aproximadas"
-                class="border rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 ...
+ pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
               ></textarea>
             </label>
 
@@ -347,7 +379,8 @@
         </div>
       </section>
 
-      <footer class="bg-gray-900 text-gray-300 text-center py-6">
+      <footer class="bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-300 text-center py-6">
+
   <div class="max-w-5xl mx-auto px-4">
     <p class="text-sm mb-2 text-gray-400">
       <i class="fa-solid fa-location-dot text-accent mr-1"></i>
@@ -375,6 +408,7 @@
         <i class="fa-brands fa-whatsapp"></i>
       </a>
     </main>
+    
 
     <script src="./js/main.js"></script>
   </body>
