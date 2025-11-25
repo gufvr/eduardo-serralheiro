@@ -44,7 +44,7 @@ function fecharImagem() {
 const WA_NUMBER = "5515997171374";
 
 function abrirWhatsApp(mensagem = null) {
-  const textoBase = mensagem || "👋 Olá! Vi seu site e gostaria de um orçamento.";
+  const textoBase = mensagem || "👋 Olá! Tudo bem? Encontrei seu site e quero solicitar um orçamento.";
   const url = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(
     textoBase
   )}`;
@@ -107,11 +107,19 @@ if (form) {
 
     const numerosSomente = telefone.replace(/\D/g, "");
 
-    if (!regexNumeros.test(numerosSomente)) {
+    if (!/^\d+$/.test(numerosSomente)) {
       alert("O campo 'Telefone' deve conter apenas números!");
       telefoneInput.focus();
       return;
     }
+
+    if (numerosSomente.length < 10 || numerosSomente.length > 11) {
+      alert("Digite um telefone válido com DDD (10 ou 11 dígitos).");
+      telefoneInput.focus();
+      return;
+    }
+
+
 
     const mensagemExtra = `👋 Olá! Vi seu site e gostaria de um orçamento.\n\n📋Nome completo: ${
       nome || "-"
