@@ -22,6 +22,7 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
+
 function abrirImagem(src) {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
@@ -43,8 +44,7 @@ function fecharImagem() {
 const WA_NUMBER = "5515997171374";
 
 function abrirWhatsApp(mensagem = null) {
-  const textoBase =
-    mensagem || "👋 Olá! Vi seu site e gostaria de um orçamento.";
+  const textoBase = mensagem || "👋 Olá! Vi seu site e gostaria de um orçamento.";
   const url = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(
     textoBase
   )}`;
@@ -67,23 +67,34 @@ const mensagemPadrao =
 const form = document.getElementById("orcamentoForm");
 const telefoneInput = document.getElementById("telefone");
 
-const regexNumeros = /^\d+$/;
+const regexNumeros = /^\d{10,11}$/;
 
-telefoneInput.addEventListener("input", (e) => {
-  let valor = e.target.value.replace(/\D/g, ""); // remove tudo que não é número
-  if (valor.length > 11) valor = valor.slice(0, 11);
+telefoneInput.addEventListener("input", (event) => {
+  const input = event.target;
 
-  let formatado = valor;
-  if (valor.length > 6) {
-    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
-  } else if (valor.length > 2) {
-    formatado = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-  } else if (valor.length > 0) {
-    formatado = `(${valor}`;
-  }
+  let pos = input.selectionStart;
 
-  e.target.value = formatado;
+  let numeros = input.value.replace(/\D/g, "");
+
+  if (numeros.length > 11) numeros = numeros.slice(0, 11);
+
+  const formatado = formatarTelefone(numeros);
+
+  const diff = formatado.length - input.value.length;
+
+  input.value = formatado;
+
+  input.selectionStart = input.selectionEnd = pos + diff;
+
 });
+
+function formatarTelefone(v) {
+  if (v.length === 0) return "";
+  if (v.length <= 2) return `(${v}`;
+  if (v.length <= 6) return `(${v.slice(0, 2)}) ${v.slice(2)}`;
+  if (v.length <= 10) return `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6)}`;
+  return `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7, 11)}`;
+}
 
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -95,6 +106,7 @@ if (form) {
     const mensagem = document.getElementById("mensagem").value.trim();
 
     const numerosSomente = telefone.replace(/\D/g, "");
+
     if (!regexNumeros.test(numerosSomente)) {
       alert("O campo 'Telefone' deve conter apenas números!");
       telefoneInput.focus();
@@ -112,19 +124,12 @@ if (form) {
 
   const limparBtn = document.getElementById("limparBtn");
   if (limparBtn) {
-    limparBtn.addEventListener("click", () => form.reset());
+    limparBtn.addEventListener("click", () => {
+      form.reset();
+    });
   }
 }
 
-function abrirImagem(src) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-
-  modalImg.src = src;
-  modal.classList.remove("hidden");
-
-  setTimeout(() => modalImg.classList.add("scale-100"), 10);
-}
 
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");

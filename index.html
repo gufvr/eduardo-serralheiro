@@ -297,27 +297,20 @@
               </label>
 
               <label class="flex flex-col text-sm relative">
-                <span
-                  class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1"
-                >
+                <span class="mb-1 text-gray-600 dark:text-gray-300 flex items-center gap-1">
                   <i class="fa-solid fa-phone text-gray-400"></i> Telefone
                 </span>
+
                 <input
                   type="tel"
                   id="telefone"
                   placeholder="(99) 99999-9999"
-                  class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 ...
- pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
+                  class="border border-gray-300 dark:border-gray-600 rounded px-3 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-accent dark:bg-gray-700 dark:text-gray-200"
                   required
-                  oninput="const warning = this.nextElementSibling; if(/\D/.test(this.value)){ warning.classList.remove('hidden'); this.value = this.value.replace(/\D/g,''); } else { warning.classList.add('hidden'); }"
                 />
-                <span
-                  id="telefoneWarning"
-                  class="text-red-500 text-xs mt-1 hidden"
-                >
-                  O campo Telefone aceita apenas números!
-                </span>
+
               </label>
+
             </div>
 
             <label class="flex flex-col text-sm mt-4 relative">
